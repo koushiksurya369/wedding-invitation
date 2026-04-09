@@ -17,6 +17,7 @@ document.getElementById(
 
 }
 
+
 /* Countdown */
 
 const weddingDate =
@@ -51,6 +52,8 @@ days + " Days to Wedding";
 const music =
 document.getElementById("bgMusic");
 
+/* start muted */
+
 music.volume = 0;
 
 function fadeInMusic() {
@@ -62,19 +65,18 @@ setInterval(() => {
 
 if (vol < 0.5) {
 
-vol += 0.05;
+vol += 0.02;
 
 music.volume = vol;
 
 }
-
 else {
 
 clearInterval(fade);
 
 }
 
-}, 400);
+}, 200);
 
 }
 
@@ -98,7 +100,7 @@ fadeInMusic();
 });
 
 
-/* Scroll Animation */
+/* Scroll Animation (Fade-In Sections) */
 
 const observer =
 new IntersectionObserver(
@@ -114,6 +116,9 @@ entry.target.classList.add("show");
 
 });
 
+},
+{
+threshold: 0.4
 }
 );
 
@@ -125,17 +130,27 @@ observer.observe(el);
 
 });
 
-/* COUPLE FADE OUT ON SCROLL */
+
+/* COUPLE FADE AFTER CENTER */
 
 const coupleSection =
 document.querySelector(".fade-scroll");
 
 window.addEventListener("scroll", () => {
 
-const scrollY =
-window.scrollY;
+if (!coupleSection) return;
 
-if (scrollY > 200) {
+/* get section position */
+
+const rect =
+coupleSection.getBoundingClientRect();
+
+/* trigger fade ONLY after center passes */
+
+const screenCenter =
+window.innerHeight / 2;
+
+if (rect.top < screenCenter - 100) {
 
 coupleSection.classList.add("hide");
 
