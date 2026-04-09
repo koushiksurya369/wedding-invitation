@@ -1,0 +1,113 @@
+body {
+
+margin: 0;
+
+font-family: Georgia;
+
+background: #f9f6ef;
+
+}
+
+/* HERO */
+
+.hero {
+
+height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+background:
+
+url("royal-bg.jpg");
+
+background-size: cover;
+
+color: white;
+
+text-align: center;
+
+}
+
+.couple {
+
+font-size: 60px;
+
+}
+
+.couple span {
+
+color: gold;
+
+}
+
+/* EVENTS */
+
+.events {
+
+padding: 50px;
+
+text-align: center;
+
+}
+
+.event-card {
+
+background: white;
+
+padding: 20px;
+
+margin: 20px auto;
+
+border-radius: 10px;
+
+max-width: 400px;
+
+box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+}
+
+/* RSVP */
+
+.rsvp {
+
+background: #fff8e7;
+
+padding: 40px;
+
+text-align: center;
+
+}
+
+input,
+select,
+textarea {
+
+width: 80%;
+
+padding: 10px;
+
+margin: 10px;
+
+border-radius: 8px;
+
+}
+
+button {
+
+background: gold;
+
+padding: 10px 30px;
+
+border-radius: 8px;
+
+border: none;
+
+cursor: pointer;
+
+}
