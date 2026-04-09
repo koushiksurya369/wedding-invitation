@@ -7,8 +7,8 @@ font-family: 'Cinzel', serif;
 background:
 
 linear-gradient(
-rgba(0,0,0,0.6),
-rgba(0,0,0,0.6)
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.7)
 ),
 
 url("royal-bg.jpg");
@@ -20,6 +20,32 @@ background-position: center;
 background-attachment: fixed;
 
 color: white;
+
+}
+
+/* MUSIC BUTTON */
+
+#musicBtn {
+
+position: fixed;
+
+top: 15px;
+
+right: 15px;
+
+background: gold;
+
+border: none;
+
+padding: 10px 14px;
+
+border-radius: 10px;
+
+cursor: pointer;
+
+z-index: 999;
+
+font-size: 14px;
 
 }
 
@@ -37,10 +63,6 @@ align-items: center;
 
 text-align: center;
 
-}
-
-.overlay {
-
 padding: 20px;
 
 }
@@ -51,6 +73,8 @@ font-family: 'Great Vibes', cursive;
 
 font-size: 80px;
 
+margin: 10px 0;
+
 }
 
 .couple span {
@@ -59,11 +83,13 @@ color: gold;
 
 }
 
-.invite-text {
+.quote {
 
 font-size: 18px;
 
 margin-top: 10px;
+
+font-style: italic;
 
 }
 
@@ -81,7 +107,7 @@ margin-top: 20px;
 
 .events {
 
-padding: 80px 20px;
+padding: 70px 20px;
 
 text-align: center;
 
@@ -89,7 +115,7 @@ text-align: center;
 
 .section-title {
 
-font-size: 40px;
+font-size: 36px;
 
 color: gold;
 
@@ -105,7 +131,7 @@ flex-wrap: wrap;
 
 justify-content: center;
 
-gap: 30px;
+gap: 20px;
 
 }
 
@@ -113,23 +139,13 @@ gap: 30px;
 
 background: rgba(255,255,255,0.1);
 
-backdrop-filter: blur(6px);
-
-padding: 25px;
+padding: 20px;
 
 border-radius: 15px;
 
 width: 250px;
 
 border: 1px solid gold;
-
-transition: 0.3s;
-
-}
-
-.event-card:hover {
-
-transform: scale(1.05);
 
 }
 
@@ -139,13 +155,45 @@ background: rgba(255,215,0,0.2);
 
 }
 
+/* VENUE */
+
+.venue {
+
+text-align: center;
+
+padding: 60px 20px;
+
+}
+
+.venue-name {
+
+font-size: 20px;
+
+margin-bottom: 20px;
+
+}
+
+.map-btn {
+
+background: gold;
+
+padding: 12px 20px;
+
+border-radius: 10px;
+
+color: black;
+
+text-decoration: none;
+
+font-weight: bold;
+
+}
+
 /* GALLERY */
 
 .gallery {
 
-padding: 80px 20px;
-
-text-align: center;
+padding: 60px 20px;
 
 }
 
@@ -155,9 +203,9 @@ display: grid;
 
 grid-template-columns:
 
-repeat(auto-fit, minmax(200px, 1fr));
+repeat(auto-fit, minmax(180px, 1fr));
 
-gap: 20px;
+gap: 15px;
 
 }
 
@@ -165,7 +213,7 @@ gap: 20px;
 
 width: 100%;
 
-height: 220px;
+height: 200px;
 
 object-fit: cover;
 
@@ -173,17 +221,9 @@ border-radius: 15px;
 
 border: 2px solid gold;
 
-transition: 0.3s;
-
 }
 
-.gallery img:hover {
-
-transform: scale(1.05);
-
-}
-
-/* MOBILE */
+/* MOBILE FIX */
 
 @media(max-width:768px){
 
@@ -195,7 +235,7 @@ font-size: 50px;
 
 .section-title {
 
-font-size: 30px;
+font-size: 28px;
 
 }
 
@@ -207,32 +247,16 @@ width: 90%;
 
 .gallery img {
 
-height: 180px;
-
-}
+height: 160px;
 
 }
 
 #musicBtn {
 
-position: fixed;
+font-size: 12px;
 
-top: 20px;
+padding: 8px 12px;
 
-right: 20px;
-
-background: gold;
-
-border: none;
-
-padding: 10px 15px;
-
-border-radius: 10px;
-
-font-size: 16px;
-
-cursor: pointer;
-
-z-index: 1000;
+}
 
 }

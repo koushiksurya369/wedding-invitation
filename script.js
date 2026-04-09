@@ -15,6 +15,8 @@ document.getElementById(
 
 }
 
+/* Countdown */
+
 const weddingDate =
 new Date(
 "April 26, 2026 07:48:00"
@@ -41,7 +43,7 @@ days + " Days to Wedding";
 
 },1000);
 
-// MUSIC CONTROL
+/* MUSIC FIX */
 
 const music =
 document.getElementById("bgMusic");
@@ -68,3 +70,15 @@ btn.innerHTML = "🔊 Play Music";
 }
 
 });
+
+/* Auto play after first touch */
+
+document.body.addEventListener(
+"click",
+() => {
+
+music.play();
+
+},
+{ once: true }
+);
