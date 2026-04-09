@@ -1,5 +1,3 @@
-// Guest Name
-
 const params =
 new URLSearchParams(
 window.location.search
@@ -10,15 +8,12 @@ params.get("to");
 
 if (guest) {
 
-document
-.getElementById(
+document.getElementById(
 "guestName"
 ).innerHTML =
 "Welcome " + guest;
 
 }
-
-// Countdown
 
 const weddingDate =
 new Date(
@@ -39,11 +34,37 @@ diff /
 (1000*60*60*24)
 );
 
-document
-.getElementById(
+document.getElementById(
 "countdown"
 ).innerHTML =
-days +
-" Days to go";
+days + " Days to Wedding";
 
 },1000);
+
+// MUSIC CONTROL
+
+const music =
+document.getElementById("bgMusic");
+
+const btn =
+document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+
+if (music.paused) {
+
+music.play();
+
+btn.innerHTML = "🔇 Stop Music";
+
+}
+
+else {
+
+music.pause();
+
+btn.innerHTML = "🔊 Play Music";
+
+}
+
+});
