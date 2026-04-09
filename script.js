@@ -1,3 +1,5 @@
+/* Guest Name */
+
 const params =
 new URLSearchParams(
 window.location.search
@@ -43,42 +45,105 @@ days + " Days to Wedding";
 
 },1000);
 
-/* MUSIC FIX */
+
+/* MUSIC FADE-IN */
 
 const music =
 document.getElementById("bgMusic");
 
-const btn =
-document.getElementById("musicBtn");
+music.volume = 0;
 
-btn.addEventListener("click", () => {
+function fadeInMusic() {
 
-if (music.paused) {
+let vol = 0;
 
-music.play();
+let fade =
+setInterval(() => {
 
-btn.innerHTML = "🔇 Stop Music";
+if (vol < 0.5) {
+
+vol += 0.05;
+
+music.volume = vol;
 
 }
 
 else {
 
-music.pause();
+clearInterval(fade);
 
-btn.innerHTML = "🔊 Play Music";
+}
+
+}, 400);
+
+}
+
+
+/* Entrance Animation */
+
+const enterBtn =
+document.getElementById("enterBtn");
+
+const entrance =
+document.getElementById("entrance");
+
+enterBtn.addEventListener("click", () => {
+
+entrance.style.display = "none";
+
+music.play();
+
+fadeInMusic();
+
+});
+
+
+/* Scroll Animation */
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
 
 }
 
 });
 
-/* Auto play after first touch */
-
-document.body.addEventListener(
-"click",
-() => {
-
-music.play();
-
-},
-{ once: true }
+}
 );
+
+document
+.querySelectorAll(".fade-in")
+.forEach(el=>{
+
+observer.observe(el);
+
+});
+
+/* COUPLE FADE OUT ON SCROLL */
+
+const coupleSection =
+document.querySelector(".fade-scroll");
+
+window.addEventListener("scroll", () => {
+
+const scrollY =
+window.scrollY;
+
+if (scrollY > 200) {
+
+coupleSection.classList.add("hide");
+
+}
+else {
+
+coupleSection.classList.remove("hide");
+
+}
+
+});
